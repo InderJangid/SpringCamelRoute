@@ -1,0 +1,13 @@
+spring:
+  activemq:
+    broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+    user: admin
+    password: admin
+
+camel:
+  logging:
+    defaults: "?level=info&showAll=true"
+  routes:
+    advice:
+      inputqueueurl: "jms:queue:testinput"
+      outputqueueurl: "jms:queue:testoutput"

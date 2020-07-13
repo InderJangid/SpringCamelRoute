@@ -1,0 +1,18 @@
+spring:
+  activemq:
+    broker-url: tcp://localhost:61616
+    user: admin
+    password: admin
+
+
+camel:
+  logging:
+      defaults: "?level=DEBUG&showAll=true"
+  routes:
+    advice:
+      inputqueueurl: "jms:queue:input"
+      outputqueueurl: "jms:queue:output"
+
+activemq:
+  host: "${JMS_HOST:localhost}"
+  port: "${JMS_PORT:61616}"
